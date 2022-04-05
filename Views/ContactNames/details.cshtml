@@ -1,0 +1,10 @@
+@model string
+<div class="text-center">
+    <h4 class="p-5">Contact Details</h4>
+
+    @using (Html.BeginForm("Delete", "ContactNames", FormMethod.Post))
+    {
+        <input value="@Model" placeholder="New Contact" name="contact" />
+        <button type="submit">Delete</button>
+    }
+</div>

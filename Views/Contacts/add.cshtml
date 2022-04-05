@@ -1,0 +1,64 @@
+@model completed_project.Controllers.Contact
+<div class="text-center">
+
+    <h4 class="p-5">Add a New Contact</h4>
+    <div class="d-flex justify-content-center">
+        @using (Html.BeginForm("Add", "Contacts", FormMethod.Post))
+        {
+            <table>
+
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        <input placeholder="Name" name="Name" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        @Html.EditorFor(contact => contact.Email
+                    , new { htmlAttributes = new { placeholder="Email"}})
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(contact => contact.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.EditorFor(contact => contact.PhoneNumber
+                    , new { htmlAttributes = new { placeholder = Html.DisplayNameFor(c => c.PhoneNumber)}})
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(contact => contact.Website)
+                    </td>
+                    <td>
+                        @Html.EditorFor(contact => contact.Website
+                    , new { htmlAttributes = new { placeholder = Html.DisplayNameFor(c => c.Website)}})
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="d-flex justify-content-end">
+
+                        @Html.ActionLink("Back to List", "List", new{}, new {@class="btn btn-secondary"})
+
+
+                        <button class="btn btn-primary" type="submit">Add</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        }
+    </div>
+</div>
