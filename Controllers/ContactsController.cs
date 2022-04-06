@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using completed_project.Models;
-using System.ComponentModel.DataAnnotations;
-using completed_project.Models;
 
 namespace completed_project.Controllers;
 
@@ -12,8 +10,8 @@ public class ContactsController : Controller
 
     readonly static List<Contact> contectNames = new List<Contact>
     {
-        new Contact { Name = "Jannick" },
-        new Contact{ Name = "Mohsen",Email="Mohsen.Bazmi@gmail.com",PhoneNumber="+989220480224",Website="https://ScenarioHunting.com" }
+        new Contact ("Jannick"),
+        new Contact("Mohsen"){ Email="Mohsen.Bazmi@gmail.com",PhoneNumber="+989220480224",Website="https://ScenarioHunting.com" }
     };
 
     public IActionResult List()
@@ -50,13 +48,13 @@ public class ContactsController : Controller
     #endregion Day 5
 }
 
-public class Contact
-{
-    [Display(Name = "Name")] public string Name { get; set; }
+// public class Contact
+// {
+//     [Display(Name = "Name")] public string Name { get; set; }
 
-    [Display(Name = "Phone Number")] public string PhoneNumber { get; set; }
+//     [Display(Name = "Phone Number")] public string PhoneNumber { get; set; }
 
-    [Display(Name = "Email")] public string Email { get; set; }
+//     [Display(Name = "Email")] public string Email { get; set; }
 
-    [Display(Name = "Website")] public string Website { get; set; }
-}
+//     [Display(Name = "Website")] public string Website { get; set; }
+// }
