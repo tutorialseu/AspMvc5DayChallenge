@@ -4,7 +4,7 @@
 
     @using (Html.BeginForm("Delete", "ContactNames", FormMethod.Post))
     {
-        <input value="@Model" placeholder="New Contact" name="contact" />
+        @Html.EditorFor(contact => contact, new { htmlAttributes = new { name="contact"}})
         <button type="submit">Delete</button>
     }
 </div>
