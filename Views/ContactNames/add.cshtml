@@ -4,7 +4,7 @@
     <h4 class="p-5">Add a New Contact</h4>
     @using (Html.BeginForm("Add", "ContactNames", FormMethod.Post))
     {
-        @Html.EditorFor(contact => contact, new { htmlAttributes = new { name="newContact"}})
+        @Html.EditorFor(contact => contact, null, "newContact")
         <button type="submit">Add</button>
     }
 </div>
