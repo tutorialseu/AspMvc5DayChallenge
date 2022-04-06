@@ -9,20 +9,19 @@
 
                 <tr>
                     <td>
-                        Name
+                       @Html.LabelFor(contact => contact.Name)
                     </td>
                     <td>
-                        <input placeholder="Name" name="Name" />
+                       @Html.EditorFor(contact => contact.Name)
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        Email
+                       @Html.LabelFor(contact => contact.Email)
                     </td>
                     <td>
-                        @Html.EditorFor(contact => contact.Email
-                    , new { htmlAttributes = new { placeholder="Email"}})
+                        @Html.EditorFor(contact => contact.Email)
                     </td>
                 </tr>
 
@@ -31,8 +30,7 @@
                         @Html.LabelFor(contact => contact.PhoneNumber)
                     </td>
                     <td>
-                        @Html.EditorFor(contact => contact.PhoneNumber
-                    , new { htmlAttributes = new { placeholder = Html.DisplayNameFor(c => c.PhoneNumber)}})
+                        @Html.EditorFor(contact => contact.PhoneNumber)
                     </td>
                 </tr>
 
@@ -41,8 +39,7 @@
                         @Html.LabelFor(contact => contact.Website)
                     </td>
                     <td>
-                        @Html.EditorFor(contact => contact.Website
-                    , new { htmlAttributes = new { placeholder = Html.DisplayNameFor(c => c.Website)}})
+                        @Html.EditorFor(contact => contact.Website)
                     </td>
                 </tr>
 

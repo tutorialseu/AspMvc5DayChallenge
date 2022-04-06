@@ -41,9 +41,9 @@ public class ContactsController : Controller
     }
 
     [HttpPost]
-    public IActionResult Delete(string contactName)//Challenge: The name should be passed only
+    public IActionResult Delete(string name)//Challenge: The name should be passed only
     {
-        contectNames.Remove(contectNames.Single(c => c.Name == contactName));
+        contectNames.Remove(contectNames.Single(c => c.Name == name));
         return RedirectToAction(nameof(List));
     }
 

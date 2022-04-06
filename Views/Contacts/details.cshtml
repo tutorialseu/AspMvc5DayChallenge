@@ -6,20 +6,19 @@
 
             <tr>
                 <td>
-                    Name
+                    @Html.LabelFor(contact => contact.Name)
                 </td>
                 <td>
-                    <input value="@Model.Name" placeholder="Name" name="Name" disabled />
+                    @Html.EditorFor(contact => contact.Name,new { htmlAttributes = new { disabled="disabled"}})
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    Email
+                    @Html.LabelFor(contact => contact.Email)
                 </td>
                 <td>
-                    @Html.EditorFor(contact => contact.Email
-                    , new { htmlAttributes = new { placeholder="Email", disabled="disabled"}})
+                    @Html.EditorFor(contact => contact.Email,new { htmlAttributes = new { disabled="disabled"}})
                 </td>
             </tr>
 
@@ -28,9 +27,7 @@
                     @Html.LabelFor(contact => contact.PhoneNumber)
                 </td>
                 <td>
-                    @Html.EditorFor(contact => contact.PhoneNumber
-                    , new { htmlAttributes = new { placeholder = Html.DisplayNameFor(c => c.PhoneNumber),
-                    disabled="disabled"}})
+                    @Html.EditorFor(contact => contact.PhoneNumber,new { htmlAttributes = new { disabled="disabled"}})
                 </td>
             </tr>
 
@@ -39,12 +36,10 @@
                     @Html.LabelFor(contact => contact.Website)
                 </td>
                 <td>
-                    @Html.EditorFor(contact => contact.Website
-                    , new { htmlAttributes = new { placeholder = Html.DisplayNameFor(c =>
-                    c.Website),disabled="disabled"}})
+                    @Html.EditorFor(contact => contact.Website,new { htmlAttributes = new { disabled="disabled"}})
                 </td>
             </tr>
-            
+
             <tr>
                 <td></td>
                 <td class="d-flex justify-content-end">
@@ -54,7 +49,8 @@
 
                     @using (Html.BeginForm("Delete", "Contacts", FormMethod.Post))
                     {
-                        <input value="@Model.Name" id="contactName" name="contactName" hidden />
+                    @Html.HiddenFor(contact => contact.Name)
+                        @* <input value="@Model.Name" id="contactName" name="contactName" hidden /> *@
                         <button class="btn btn-primary" type="submit">Delete</button>
                     }
                 </td>
